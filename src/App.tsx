@@ -1,11 +1,22 @@
-import "./App.css";
+import './App.css'
+import 'animate.css'
+import { ConfigProvider } from 'antd'
+import { HelmetProvider } from 'react-helmet-async'
+import { BrowserRouter } from 'react-router-dom'
+import RouteApp from './route'
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <ConfigProvider>
+        <HelmetProvider>
+          <BrowserRouter>
+            <RouteApp />
+          </BrowserRouter>
+        </HelmetProvider>
+      </ConfigProvider>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
