@@ -1,11 +1,13 @@
 import HeaderLayout from "~/container/layout/Header";
+import SliderHome from "./Slider";
 
-const index = () => {
+const Home = () => {
   return (
-    <div className="">
+    <div className="flex flex-col">
       <HeaderLayout />
+      <SliderHome />
     </div>
   );
 };
 
-export default index;
+export default Home;

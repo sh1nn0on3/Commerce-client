@@ -4,6 +4,7 @@ import { ConfigProvider } from 'antd'
 import { HelmetProvider } from 'react-helmet-async'
 import { BrowserRouter } from 'react-router-dom'
 import RouteApp from './route'
+// import 'dotenv/config'
 
 function App() {
   return (

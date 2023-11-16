@@ -1,5 +1,6 @@
 import { PathRouteProps } from 'react-router-dom'
 import HeaderLayout from '~/container/layout/Header'
+import Home from '~/container/page/public/Home'
 
 export interface IRouteConfig extends PathRouteProps {
   Element: JSX.Element
@@ -14,7 +15,7 @@ const routerConfig: IRouteConfig[] = [
   },
   {
     path: '/',
-    Element: <HeaderLayout />,
+    Element: <Home />,
     key: 'home'
   },
 
