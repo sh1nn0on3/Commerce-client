@@ -3,7 +3,7 @@ import { NavigateTop } from "~/components/navigate";
 const BannerTop = () => {
   return (
     <div className="">
-      <div className="flex justify-center items-center gap-3 py-1">
+      <div className="flex justify-center items-center gap-3 my-1">
         <span className="animate_pulse"></span>
         <p className="flex gap-2 items-center">
           <strong className="text-[12px]">
@@ -17,14 +17,16 @@ const BannerTop = () => {
           </a>
         </p>
       </div>
-      <div className="absolute w-full bg-primary">
-        <nav className="w-container max-w-[90%] mx-auto ">
-          <div className="hidden bannerTop:flex justify-end gap-4  ">
+      <div className="sticky w-full bg-primary my-1 ">
+        <nav className="w-container max-w-[90%] mx-auto flex justify-end gap-4 text-[18px]  ">
+          <div className="hidden bannerTop:flex gap-4  ">
             <NavigateTop path="#" name="Bản mobile" />
-            <NavigateTop path="#" name="Giới thiệu" />
             <NavigateTop path="#" name="Sản phẩm đã xem" />
             <NavigateTop path="#" name="Trung tâm bảo hành" />
             <NavigateTop path="#" name="Hệ thống 127 siêu thị " />
+          </div>
+          <div className="flex gap-4 ">
+            <NavigateTop path="#" name="Giới thiệu" />
             <NavigateTop path="#" name="Tuyển dụng" />
             <NavigateTop path="#" name="Tra cứu đơn hàng" />
             <NavigateTop path="/login" name="Đăng nhập" />
