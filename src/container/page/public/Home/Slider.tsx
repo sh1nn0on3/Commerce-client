@@ -9,14 +9,32 @@ interface ISlider {
   link: String | any;
 }
 
-const contentStyle: React.CSSProperties = {
-  margin: 0,
-  height: "160px",
-  color: "#fff",
-  lineHeight: "160px",
-  textAlign: "center",
-  background: "#364d79",
-};
+const banner: ISlider[] = [
+  {
+    name: "",
+    img:
+      "https://cdn.hoanghamobile.com/i/home/Uploads/2023/10/05/galaxy-s20-fe-1.png",
+    link: "#",
+  },
+  {
+    name: "",
+    img:
+      "https://cdn.hoanghamobile.com/i/home/Uploads/2023/10/31/macbook-air.png",
+    link: "#",
+  },
+  {
+    name: "",
+    img:
+      "https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/16/huawei-watch-gt4.png",
+    link: "#",
+  },
+  {
+    name: "",
+    img:
+      "https://cdn.hoanghamobile.com/i/home/Uploads/2023/11/16/vivobook-14.png",
+    link: "#",
+  },
+];
 
 const slider: ISlider[] = [
   {
@@ -62,29 +80,42 @@ const SliderHome: React.FC = () => {
   };
 
   return (
-    <div className="mt-4 w-container max-w-[90%] mx-auto relative ">
-      <Carousel ref={(ref) => (carouselRef = ref)} autoplay>
-        {slider.map((props, index) => (
+    <>
+      <div className="mt-4 w-container max-w-[90%] mx-auto relative ">
+        <Carousel ref={(ref) => (carouselRef = ref)} autoplay >
+          {slider.map((props, index) => (
+            <div
+              key={index}
+              onClick={() => navigate(`${props.link}`)}
+              className=" border-none cursor-pointer "
+            >
+              <img src={props.img} alt="#" className=" w-container " />
+            </div>
+          ))}
+        </Carousel>
+        <div className="text-xl text-orange-500  " onClick={prev}>
+          <div className=" absolute -translate-y-[50%] top-[50%] mx-2 px-1 py-1 bg-gray-200 rounded-full cursor-pointer opacity-70 hover:opacity-50 ">
+            <BsChevronLeft />
+          </div>
+        </div>
+        <div className="text-xl text-orange-500" onClick={next}>
+          <div className=" absolute -translate-y-[50%] top-[50%] right-[0%] mx-2 px-1 py-1 bg-gray-200 rounded-full cursor-pointer opacity-70 hover:opacity-50 ">
+            <BsChevronRight />
+          </div>
+        </div>
+      </div>
+      <div className="flex my-4 w-container max-w-[90%] mx-auto justify-around gap-2 items-center ">
+        {banner.map((props, index) => (
           <div
             key={index}
+            className="cursor-pointer"
             onClick={() => navigate(`${props.link}`)}
-            className=" border-none cursor-pointer "
           >
-            <img src={props.img} alt="#" className=" w-container " />
+            <img src={props.img} alt={props.name} />
           </div>
         ))}
-      </Carousel>
-      <div className="text-xl text-orange-500  " onClick={prev}>
-        <div className=" absolute -translate-y-[50%] top-[50%] mx-2 px-1 py-1 bg-gray-200 rounded-full cursor-pointer opacity-70 hover:opacity-50 ">
-          <BsChevronLeft />
-        </div>
       </div>
-      <div className="text-xl text-orange-500" onClick={next}>
-        <div className=" absolute -translate-y-[50%] top-[50%] right-[0%] mx-2 px-1 py-1 bg-gray-200 rounded-full cursor-pointer opacity-70 hover:opacity-50 ">
-          <BsChevronRight />
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 

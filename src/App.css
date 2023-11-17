@@ -1,9 +1,14 @@
 body {
   font-family: 'Roboto', sans-serif;
+  /* background-color: #f4f5f5; */
 }
 .animate_pulse {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background-color: red;
+}
+
+.custom-dots {
+  margin-top: 10px; /* Điều chỉnh khoảng cách giữa các dấu chấm và nội dung Carousel */
 }

@@ -17,7 +17,7 @@ const LogoSreach = () => {
         <img
           src={Logo}
           alt="#"
-          className="w-[150px] cursor-pointer"
+          className="w-[200px] cursor-pointer"
           onClick={() => navigate("/")}
         />
         <div className="w-full flex">
